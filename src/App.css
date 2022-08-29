@@ -102,3 +102,10 @@ button {
   left: 10px;
   top: 10px;
 }
+
+.container-button-menu {
+  justify-content: center;
+  display: flex;
+  flex-flow: wrap;
+}
+

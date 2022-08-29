@@ -156,7 +156,7 @@ function App() {
             <span>select a city</span>
             <span className="material-symbols-outlined icon-menu">public</span>
 
-            <div>
+            <div className='container-button-menu'>
               {cities.map(city => {
                 return (
 
