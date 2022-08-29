@@ -1,18 +1,104 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@400;500&display=swap');
+
+.container-menu {}
+
+.justify-content-center {
+  justify-content: center;
 }
 
-html, body {
-
-  font-family:Aktiv Grotesk,-apple-system,BlinkMacSystemFont,San Francisco,Segoe UI,Roboto,Helvetica Neue,sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
+#root>div {
   height: 100%;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale;
-  
 }
 
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+main h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+  background: no-repeat;
+  border: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.center-y {
+  flex-direction: column;
+  align-items: center;
+}
+
+.temp-c {
+  font-size: 108px;
+}
+
+.arrow-up {
+  color: #898989
+}
+
+.condition-light {
+  background-color: #dfdfdf;
+  color: #1f1f1f;
+}
+
+.condition-dark {
+  background-color: #616978;
+  color: #fcfcfc;
+}
+
+.condition-sunny {
+  background-color: #57cadb;
+  color: #fcfcfc;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.icon-menu {
+  font-size: 200px;
+  padding: 40px;
+}
+
+.button-menu {
+  color: #f9f9f9;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.title-menu {
+  text-transform: uppercase;
+}
+
+.color-light {
+  color: #f9f9f9;
+}
+
+.button-back {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
