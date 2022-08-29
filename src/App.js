@@ -22,7 +22,6 @@ function App() {
   const key2 = "1fa6456d5b6744a997f160359222608";
 
   useEffect(() => {
-    console.log("Location useEffect:", location)
     var url2 = `http://api.weatherapi.com/v1/forecast.json?key= ${key2}&q=${location}&days=1&aqi=no&alerts=no`;
     // var url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${key}`;
     setLooad(true)
@@ -30,7 +29,6 @@ function App() {
       .then((response) => {
         setWeather(response.data)
         setLooad(false)
-        console.log(response.data);
       })
   }, [location])
 
