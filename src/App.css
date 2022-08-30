@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@400;500&display=swap');
+
 :root {
   --font-color-light: #fcfcfc;
   --font-color-light-2: #f9f9f9;
   --font-color-gray: #898989;
   --font-color-dark: #1f1f1f;
-  --background-color-blue: #57cadb;
-  --background-color-gray: #616978;
-  --background-color-light: #dfdfdf;
+  --background-color-blue: linear-gradient(180deg, rgb(2, 0, 36) 0%, rgb(87, 203, 220) 0%, rgb(59, 161, 181) 100%);
+  --background-color-gray: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(97, 105, 120, 1) 0%, rgba(60, 67, 83, 1) 100%);
+  --background-color-light: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(224, 224, 224, 1) 0%, rgba(166, 166, 166, 1) 100%);
+}
 
+main .temp {
+  padding: 2rem 0 1rem 0;
 }
 
 .container-menu {
   color: var(--font-color-light-2);
+  font-size: 1rem;
+  line-height: 36px;
+}
+
+.title-menu {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.container-menu>span {
+  font-weight: 100;
+  font-size: 1.5rem;
 }
 
 .justify-content-center {
@@ -26,10 +42,15 @@
   height: 100%;
 }
 
-.container h1 {
-  font-size: 40px;
+.city-title {
+  font-size: 2.7rem;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.sub-city-title {
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 
 button {
@@ -53,10 +74,10 @@ button {
 
 .justify-content-end {
   justify-content: end;
-} 
+}
 
 .temp-c {
-  font-size: 108px;
+  font-size: 6.5rem;
 }
 
 .arrow-up {
@@ -64,29 +85,34 @@ button {
 }
 
 .condition-light {
-  background-color: var(--background-color-light);
+  background: var(--background-color-light);
   color: var(--font-color-dark);
 }
 
 .condition-dark {
-  background-color: var(--background-color-gray);
+  background: var(--background-color-gray);
   color: var(--font-color-light);
 }
 
 .condition-sunny {
-  background-color: var(--background-color-blue);
+  background: var(--background-color-blue);
   color: var(--font-color-light);
 }
+
 .p-5 {
   padding: 5px;
 }
 
 .p-10 {
-  padding: 10px;
+  padding: 1rem;
 }
 
-.p-20 {
+.p-2 {
   padding: 2%;
+}
+
+.p-4 {
+  padding: 4%;
 }
 
 .material-symbols-outlined {
@@ -98,18 +124,13 @@ button {
 }
 
 .icon-menu {
-  font-size: 200px;
   padding: 40px;
 }
 
 .button-menu {
   color: var(--font-color-light-2);
   padding: 10px;
-  font-size: 20px;
-}
-
-.title-menu {
-  text-transform: uppercase;
+  font-size: 1.25rem;
 }
 
 .button-back {
@@ -129,7 +150,26 @@ button {
   font-size: 1.5rem;
 }
 
+.font-2 {
+  font-size: 2rem;
+}
+
 
 .forecastday {
   padding: 10% 0 10% 0;
+}
+
+.astro {
+  line-height: 23px;
+}
+
+.bar {
+  height: 23px;
+  width: 1px;
+  background-color: #DBDBDB;
+  margin: 0.3rem;
+}
+
+.arrow-up-down {
+  font-size: 16px;
 }

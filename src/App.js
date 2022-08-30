@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import worldwide from './img/worldwide.svg'
 import axios from 'axios';
 
 function App() {
@@ -74,21 +75,21 @@ function App() {
               <header className='flex center-y justify-content-center'>
                 <button className='material-symbols-outlined p-10 button-back' onClick={() => { setScreen(false) }}><strong>arrow_back</strong></button>
                 {weather.location ? <h1 className='city-title'>{weather.location.name}</h1> : null}
-                {weather.current ? <div>{weather.current.condition.text}</div> : null}
+                {weather.current ? <p className='sub-city-title'>{weather.current.condition.text}</p> : null}
               </header>
 
               <main className='flex center-y justify-content-center'>
-                <div className='flex p-20 align-items-center'>
+                <div className='flex p-2 align-items-center temp'>
                   {weather.current ? <p className='temp-c'>{weather.current.temp_c}</p> : null}
                   <div>
-                    <p className='flex justify-content-end font-1-5'>°C</p>
+                    <p className='flex justify-content-end font-2'>°C</p>
                     <div className='flex'>
-                      <span class="material-symbols-outlined">arrow_upward</span>
-                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.maxtemp_c}</p> : null}
+                      <span class="arrow-up-down material-symbols-outlined">arrow_upward</span>
+                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.maxtemp_c}°</p> : null}
                     </div>
                     <div className='flex'>
-                      <span class="material-symbols-outlined">arrow_downward</span>
-                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.mintemp_c}</p> : null}
+                      <span class="arrow-up-down material-symbols-outlined">arrow_downward</span>
+                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.mintemp_c}°</p> : null}
                     </div>
                   </div>
                 </div>
@@ -98,50 +99,51 @@ function App() {
                 </div>
 
                 <div className='flex justify-content-center forecastday'>
-                  <div className='flex center-y p-20'>
+                  <div className='flex center-y p-4'>
                     <div>dawn</div>
                     {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[5].condition.icon} alt="Condition"></img> : null}
                     {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[5].temp_c}°C</p> : null}
                   </div>
 
-                  <div className='flex center-y p-20'>
+                  <div className='flex center-y p-4'>
                     <div>morning</div>
                     {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[11].condition.icon} alt="Condition"></img> : null}
                     {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[11].temp_c}°C</p> : null}
                   </div>
 
-                  <div className='flex center-y p-20'>
+                  <div className='flex center-y p-4'>
                     <div>afternoon</div>
                     {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[16].condition.icon} alt="Condition"></img> : null}
                     {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[16].temp_c}°C</p> : null}
                   </div>
 
-                  <div className='flex center-y p-20'>
+                  <div className='flex center-y p-4'>
                     <div>night</div>
                     {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[21].condition.icon} alt="Condition"></img> : null}
                     {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[21].temp_c}°C</p> : null}
                   </div>
                 </div>
 
-                <div className='flex'>
+                <div className='flex align-items-center astro'>
 
                   <div className='flex center-y p-10'>
                     <p>wind speed</p>
                     {weather.current ? <p>{weather.current.wind_mph} m/s</p> : null}
                   </div>
+                  <div className='bar flex center-y'></div>
                   <div className='flex center-y p-10'>
-                    <div>sunrise</div>
-                    {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunrise}</div> : null}
+                    <p>sunrise</p>
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].astro.sunrise}</p> : null}
                   </div>
-
+                  <div className='bar flex center-y'></div>
                   <div className='flex center-y p-10'>
-                    <div>sunset</div>
-                    {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunset}</div> : null}
+                    <p>sunset</p>
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].astro.sunset}</p> : null}
                   </div>
-
+                  <div className='bar flex center-y'></div>
                   <div className='flex center-y p-10'>
-                    <div>humidity</div>
-                    {weather.current ? <div>{weather.current.humidity}%</div> : null}
+                    <p>humidity</p>
+                    {weather.current ? <p>{weather.current.humidity}%</p> : null}
                   </div>
 
                 </div>
@@ -160,7 +162,7 @@ function App() {
           <div className='flex center-y container-menu justify-content-center'>
             <h1 className='title-menu'>weather</h1>
             <span>select a city</span>
-            <span className="material-symbols-outlined icon-menu">public</span>
+            <img className="icon-menu" src={worldwide} alt="Worldwide"></img>
 
             <div className='container-button-menu'>
               {cities.map(city => {
