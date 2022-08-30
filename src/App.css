@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@400;500&display=swap');
+:root {
+  --font-color-light: #fcfcfc;
+  --font-color-light-2: #f9f9f9;
+  --font-color-gray: #898989;
+  --font-color-dark: #1f1f1f;
+  --background-color-blue: #57cadb;
+  --background-color-gray: #616978;
+  --background-color-light: #dfdfdf;
 
-.container-menu {}
+}
+
+.container-menu {
+  color: var(--font-color-light-2);
+}
 
 .justify-content-center {
   justify-content: center;
@@ -10,15 +22,11 @@
   height: 100%;
 }
 
-main {
+.container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-main h1 {
+.container h1 {
   font-size: 40px;
   text-transform: uppercase;
   font-weight: 400;
@@ -39,27 +47,38 @@ button {
   align-items: center;
 }
 
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+} 
+
 .temp-c {
   font-size: 108px;
 }
 
 .arrow-up {
-  color: #898989
+  color: var(--font-color-gray);
 }
 
 .condition-light {
-  background-color: #dfdfdf;
-  color: #1f1f1f;
+  background-color: var(--background-color-light);
+  color: var(--font-color-dark);
 }
 
 .condition-dark {
-  background-color: #616978;
-  color: #fcfcfc;
+  background-color: var(--background-color-gray);
+  color: var(--font-color-light);
 }
 
 .condition-sunny {
-  background-color: #57cadb;
-  color: #fcfcfc;
+  background-color: var(--background-color-blue);
+  color: var(--font-color-light);
+}
+.p-5 {
+  padding: 5px;
 }
 
 .p-10 {
@@ -67,7 +86,7 @@ button {
 }
 
 .p-20 {
-  padding: 20px;
+  padding: 2%;
 }
 
 .material-symbols-outlined {
@@ -84,7 +103,7 @@ button {
 }
 
 .button-menu {
-  color: #f9f9f9;
+  color: var(--font-color-light-2);
   padding: 10px;
   font-size: 20px;
 }
@@ -93,11 +112,8 @@ button {
   text-transform: uppercase;
 }
 
-.color-light {
-  color: #f9f9f9;
-}
-
 .button-back {
+  color: var(--font-color-light);
   position: fixed;
   left: 10px;
   top: 10px;
@@ -109,3 +125,11 @@ button {
   flex-flow: wrap;
 }
 
+.font-1-5 {
+  font-size: 1.5rem;
+}
+
+
+.forecastday {
+  padding: 10% 0 10% 0;
+}

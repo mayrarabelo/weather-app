@@ -70,77 +70,85 @@ function App() {
 
           {looad ? <div>Loading</div> :
 
-            <main>
+            <div className='container flex center-y justify-content-center'>
+              <header className='flex center-y justify-content-center'>
+                <button className='material-symbols-outlined p-10 button-back' onClick={() => { setScreen(false) }}><strong>arrow_back</strong></button>
+                {weather.location ? <h1 className='city-title'>{weather.location.name}</h1> : null}
+                {weather.current ? <div>{weather.current.condition.text}</div> : null}
+              </header>
 
-              <button className='material-symbols-outlined p-10 button-back' onClick={() => { setScreen(false) }}>arrow_back</button>
+              <main className='flex center-y justify-content-center'>
+                <div className='flex p-20 align-items-center'>
+                  {weather.current ? <p className='temp-c'>{weather.current.temp_c}</p> : null}
+                  <div>
+                    <p className='flex justify-content-end font-1-5'>°C</p>
+                    <div className='flex'>
+                      <span class="material-symbols-outlined">arrow_upward</span>
+                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.maxtemp_c}</p> : null}
+                    </div>
+                    <div className='flex'>
+                      <span class="material-symbols-outlined">arrow_downward</span>
+                      {weather.forecast ? <p>{weather.forecast.forecastday[0].day.mintemp_c}</p> : null}
+                    </div>
+                  </div>
+                </div>
 
-              {weather.location ? <h1 className='city-title'>{weather.location.name}</h1> : null}
-              {weather.current ? <div>{weather.current.condition.text}</div> : null}
-
-
-              <div className='flex p-20'>
-                {weather.current ? <p className='temp-c'>{weather.current.temp_c}</p> : null}
                 <div>
-                  <div className=''>°C</div>
-                  {weather.forecast ? <p>{weather.forecast.forecastday[0].day.maxtemp_c}</p> : null}
-                  {weather.forecast ? <p>{weather.forecast.forecastday[0].day.mintemp_c}</p> : null}
-                </div>
-              </div>
-
-              <div>
-                {weather.current ? <img src={weather.current.condition.icon} alt="Condition"></img> : null}
-              </div>
-
-              <div className='flex'>
-                <div className='flex center-y p-20'>
-                  <div>dawn</div>
                   {weather.current ? <img src={weather.current.condition.icon} alt="Condition"></img> : null}
-                  {weather.current ? <p>{weather.current.temp_c}°C</p> : null}
                 </div>
 
-                <div className='flex center-y p-20'>
-                  <div>morning</div>
-                  {weather.current ? <img src={weather.current.condition.icon} alt="Condition"></img> : null}
-                  {weather.current ? <p>{weather.current.temp_c}°C</p> : null}
+                <div className='flex justify-content-center forecastday'>
+                  <div className='flex center-y p-20'>
+                    <div>dawn</div>
+                    {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[5].condition.icon} alt="Condition"></img> : null}
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[5].temp_c}°C</p> : null}
+                  </div>
+
+                  <div className='flex center-y p-20'>
+                    <div>morning</div>
+                    {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[11].condition.icon} alt="Condition"></img> : null}
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[11].temp_c}°C</p> : null}
+                  </div>
+
+                  <div className='flex center-y p-20'>
+                    <div>afternoon</div>
+                    {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[16].condition.icon} alt="Condition"></img> : null}
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[16].temp_c}°C</p> : null}
+                  </div>
+
+                  <div className='flex center-y p-20'>
+                    <div>night</div>
+                    {weather.forecast ? <img src={weather.forecast.forecastday[0].hour[21].condition.icon} alt="Condition"></img> : null}
+                    {weather.forecast ? <p>{weather.forecast.forecastday[0].hour[21].temp_c}°C</p> : null}
+                  </div>
                 </div>
 
-                <div className='flex center-y p-20'>
-                  <div>afternoon</div>
-                  {weather.current ? <img src={weather.current.condition.icon} alt="Condition"></img> : null}
-                  {weather.current ? <p>{weather.current.temp_c}°C</p> : null}
+                <div className='flex'>
+
+                  <div className='flex center-y p-10'>
+                    <p>wind speed</p>
+                    {weather.current ? <p>{weather.current.wind_mph} m/s</p> : null}
+                  </div>
+                  <div className='flex center-y p-10'>
+                    <div>sunrise</div>
+                    {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunrise}</div> : null}
+                  </div>
+
+                  <div className='flex center-y p-10'>
+                    <div>sunset</div>
+                    {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunset}</div> : null}
+                  </div>
+
+                  <div className='flex center-y p-10'>
+                    <div>humidity</div>
+                    {weather.current ? <div>{weather.current.humidity}%</div> : null}
+                  </div>
+
                 </div>
 
-                <div className='flex center-y p-20'>
-                  <div>night</div>
-                  {weather.current ? <img src={weather.current.condition.icon} alt="Condition"></img> : null}
-                  {weather.current ? <p>{weather.current.temp_c}°C</p> : null}
-                </div>
-              </div>
+              </main>
 
-              <div className='flex'>
-
-                <div className='flex center-y p-10'>
-                  <p>wind speed</p>
-                  {weather.current ? <p>{weather.current.wind_mph} m/s</p> : null}
-                </div>
-                <div className='flex center-y p-10'>
-                  <div>sunrise</div>
-                  {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunrise}</div> : null}
-                </div>
-
-                <div className='flex center-y p-10'>
-                  <div>sunset</div>
-                  {weather.forecast ? <div>{weather.forecast.forecastday[0].astro.sunset}</div> : null}
-                </div>
-
-                <div className='flex center-y p-10'>
-                  <div>humidity</div>
-                  {weather.current ? <div>{weather.current.humidity}%</div> : null}
-                </div>
-
-              </div>
-
-            </main>
+            </div>
 
           }
 
@@ -149,7 +157,7 @@ function App() {
         :
 
         <div className='flex justify-content-center'>
-          <div className='flex center-y color-light container-menu justify-content-center'>
+          <div className='flex center-y container-menu justify-content-center'>
             <h1 className='title-menu'>weather</h1>
             <span>select a city</span>
             <span className="material-symbols-outlined icon-menu">public</span>
